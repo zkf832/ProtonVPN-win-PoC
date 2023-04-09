@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2022 Proton Technologies AG
+ * Copyright (c) 2023 Proton AG
  *
  * This file is part of ProtonVPN.
  *
@@ -57,6 +57,9 @@ namespace ProtonVPN.Vpn.LocalAgent
 
         [DllImport(DllName, EntryPoint = "GetEvent", CallingConvention = CallingConvention.Cdecl)]
         public static extern GoBytes GetEvent();
+
+        [DllImport(DllName, EntryPoint = "GetStatus", CallingConvention = CallingConvention.Cdecl)]
+        public static extern GoBytes GetStatus();
 
         [DllImport(DllName, EntryPoint = "SetFeatures", CallingConvention = CallingConvention.Cdecl)]
         public static extern void SetFeatures(GoString featuresJson);

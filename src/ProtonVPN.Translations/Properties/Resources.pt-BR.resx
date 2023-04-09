@@ -400,10 +400,10 @@ Informações sobre a tabela de roteamento</value>
     <comment>The text inside info tooltip in Issue Report window</comment>
   </data>
   <data name="BugReport_lbl_LogsDescription">
-    <value>Os logs de erros nos ajudam a resolver seu problema. Se você não os incluir, talvez não possamos investigar completamente.</value>
+    <value>Os registros de erros nos ajudam a resolver seu problema. Se você não os incluir, talvez não possamos investigar completamente.</value>
   </data>
   <data name="BugReport_lbl_LogsTooltip">
-    <value>Um log é uma categoria de arquivo que nos mostra as ações que você realizou que levaram a um erro. Nós só os usaremos para ajudar nossos engenheiros a corrigir bugs.</value>
+    <value>Um registro é uma categoria de arquivo que nos mostra as ações que você realizou que levaram a um erro. Nós só os usaremos para ajudar nossos engenheiros a corrigir erros.</value>
   </data>
   <data name="BugReport_lbl_NewVersionAvailable">
     <value>Atualizar Proton VPN</value>
@@ -1546,7 +1546,7 @@ Informações sobre a tabela de roteamento</value>
     <value>Esta etapa levará apenas alguns minutos. Depois disso, você poderá fazer login e proteger todos os seus dispositivos.</value>
   </data>
   <data name="Dialogs_AssignVpnConnections_ttl_Thanks">
-    <value>Obrigado por fazer upgrade para Profissional/Visionário</value>
+    <value>Obrigado por fazer upgrade para Professional/Visionary</value>
   </data>
   <data name="Dialogs_Bfe_msg_info">
     <value>Um dos serviços exigidos pelo Proton VPN (Motor base de filtragem) não está a executando.&lt;LineBreak/&gt;
@@ -2150,7 +2150,7 @@ Por favor, siga as &lt;Hyperlink Command="{Binding OpenArticleCommand}"&gt;&lt;R
     <comment>The message displayed in the Update notification when new app version is ready to install</comment>
   </data>
   <data name="Notifications_VpnState_msg_Connected">
-    <value>CONECTADO em {0}{1}Novo IP público: {2}</value>
+    <value>CONECTADO a {0}</value>
     <comment>The message displayed in VPN state system notification when app connects to VPN. The {0} is a placeholder for server name, {1} - move to new line, {2} - public IP address.</comment>
   </data>
   <data name="Notifications_VpnState_msg_Disconnected">
@@ -3196,7 +3196,7 @@ This setting instructs the Proton VPN to start automatically when the user logs 
     <comment>The text displayed in Welcome window</comment>
   </data>
   <data name="Welcome_lbl_Welcome">
-    <value>BEM-VINDO(A) A BORDO!</value>
+    <value>BOAS-VINDAS A BORDO</value>
     <comment>The text displayed in Welcome window</comment>
   </data>
   <data name="Welcome_ttl">
@@ -3226,5 +3226,8 @@ This setting instructs the Proton VPN to start automatically when the user logs 
   <data name="WireGuard_lbl">
     <value>WireGuard</value>
     <comment>WireGuard client name (do not translate)</comment>
+  </data>
+  <data name="Connecting_lbl_ConnectingTo_2">
+    <value></value>
   </data>
 </root>

@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2022 Proton Technologies AG
+ * Copyright (c) 2023 Proton AG
  *
  * This file is part of ProtonVPN.
  *
@@ -39,5 +39,6 @@ namespace ProtonVPN.Core.Vpn
         void RegisterVpnStateCallback(Action<VpnStateChangedEventArgs> onVpnStateChanged);
         void RegisterServiceSettingsStateCallback(Action<ServiceSettingsStateChangedEventArgs> onServiceSettingsStateChanged);
         void RegisterPortForwardingStateCallback(Action<PortForwardingState> callback);
+        void RegisterConnectionDetailsChangeCallback(Action<ConnectionDetails> callback);
     }
 }

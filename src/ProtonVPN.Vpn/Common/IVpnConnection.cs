@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2022 Proton Technologies AG
+ * Copyright (c) 2023 Proton AG
  *
  * This file is part of ProtonVPN.
  *
@@ -27,6 +27,7 @@ namespace ProtonVPN.Vpn.Common
     public interface IVpnConnection
     {
         event EventHandler<EventArgs<VpnState>> StateChanged;
+        event EventHandler<ConnectionDetails> ConnectionDetailsChanged;
 
         InOutBytes Total { get; }
 

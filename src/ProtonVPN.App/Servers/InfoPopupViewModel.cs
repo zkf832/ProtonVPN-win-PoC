@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2022 Proton Technologies AG
+ * Copyright (c) 2023 Proton AG
  *
  * This file is part of ProtonVPN.
  *
@@ -17,12 +17,21 @@
  * along with ProtonVPN.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-using System.Collections.Generic;
+using Caliburn.Micro;
 
-namespace ProtonVPN.Update.Contracts
+namespace ProtonVPN.Servers
 {
-    public class CategoriesContract
+    public class InfoPopupViewModel : Screen
     {
-        public IReadOnlyList<CategoryContract> Categories;
+        public InfoPopupViewModel(Screen contentViewModel, string title)
+        {
+            ContentViewModel = contentViewModel;
+            Title = title;
+        }
+
+        public Screen ContentViewModel { get; }
+
+        public bool IsVisible { get; }
+        public string Title { get; }
     }
 }

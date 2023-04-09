@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2022 Proton Technologies AG
+ * Copyright (c) 2023 Proton AG
  *
  * This file is part of ProtonVPN.
  *
@@ -28,12 +28,12 @@ namespace ProtonVPN.Core.Auth
     public class UserValidator
     {
         private readonly IUserStorage _userStorage;
-        private readonly UserAuth _userAuth;
+        private readonly IUserAuthenticator _userAuthenticator;
 
-        public UserValidator(IUserStorage userStorage, UserAuth userAuth)
+        public UserValidator(IUserStorage userStorage, IUserAuthenticator userAuthenticator)
         {
             _userStorage = userStorage;
-            _userAuth = userAuth;
+            _userAuthenticator = userAuthenticator;
         }
 
         public async Task<AuthResult> GetValidateResult()
@@ -43,7 +43,7 @@ namespace ProtonVPN.Core.Auth
                 return AuthResult.Ok();
             }
 
-            ApiResponseResult<VpnInfoWrapperResponse> vpnInfoResult = await _userAuth.RefreshVpnInfoAsync();
+            ApiResponseResult<VpnInfoWrapperResponse> vpnInfoResult = await _userAuthenticator.RefreshVpnInfoAsync();
             if (vpnInfoResult.Failure)
             {
                 return AuthResult.Fail(vpnInfoResult);

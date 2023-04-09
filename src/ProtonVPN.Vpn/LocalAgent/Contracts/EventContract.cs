@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2022 Proton Technologies AG
+ * Copyright (c) 2023 Proton AG
  *
  * This file is part of ProtonVPN.
  *
@@ -30,5 +30,7 @@ namespace ProtonVPN.Vpn.LocalAgent.Contracts
         public int Code { get;set; }
 
         public string Desc { get; set; }
+
+        public ConnectionDetailsContract ConnectionDetails { get; set; }
     }
 }

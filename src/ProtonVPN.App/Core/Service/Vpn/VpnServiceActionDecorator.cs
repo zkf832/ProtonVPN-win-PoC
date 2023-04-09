@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2022 Proton Technologies AG
+ * Copyright (c) 2023 Proton AG
  *
  * This file is part of ProtonVPN.
  *
@@ -106,6 +106,11 @@ namespace ProtonVPN.Core.Service.Vpn
         public void RegisterPortForwardingStateCallback(Action<PortForwardingState> onPortForwardingStateChanged)
         {
             _decorated.RegisterPortForwardingStateCallback(onPortForwardingStateChanged);
+        }
+
+        public void RegisterConnectionDetailsChangeCallback(Action<ConnectionDetails> callback)
+        {
+            _decorated.RegisterConnectionDetailsChangeCallback(callback);
         }
 
         private async Task InvokeAction(Func<Task<Result>> action)

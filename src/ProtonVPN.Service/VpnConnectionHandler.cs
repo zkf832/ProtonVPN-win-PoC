@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Proton Technologies AG
+ * Copyright (c) 2023 Proton AG
  *
  * This file is part of ProtonVPN.
  *
@@ -76,7 +76,13 @@ namespace ProtonVPN.Service
             _portMappingProtocolClient = portMappingProtocolClient;
 
             _vpnConnection.StateChanged += VpnConnection_StateChanged;
+            _vpnConnection.ConnectionDetailsChanged += OnConnectionDetailsChanged;
             _portMappingProtocolClient.StateChanged += PortForwarding_StateChanged;
+        }
+
+        private void OnConnectionDetailsChanged(object sender, ConnectionDetails e)
+        {
+            Callback(callback => callback.OnConnectionDetailsChanged(Map(e)));
         }
 
         public async Task Connect(VpnConnectionRequestContract connectionRequest)
@@ -279,6 +285,16 @@ namespace ProtonVPN.Service
                 state.OpenVpnAdapter,
                 Map(state.VpnProtocol),
                 state.Label);
+        }
+
+        private ConnectionDetailsContract Map(ConnectionDetails connectionDetails)
+        {
+            return new ConnectionDetailsContract
+            {
+                ClientIpAddress = connectionDetails.ClientIpAddress,
+                ClientCountryIsoCode = connectionDetails.ClientCountryIsoCode,
+                ServerIpAddress = connectionDetails.ServerIpAddress,
+            };
         }
 
         private static VpnStatusContract Map(VpnStatus vpnStatus)

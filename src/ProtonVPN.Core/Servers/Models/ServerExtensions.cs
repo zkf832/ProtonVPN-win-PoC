@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2022 Proton Technologies AG
+ * Copyright (c) 2023 Proton AG
  *
  * This file is part of ProtonVPN.
  *
@@ -29,6 +29,7 @@ namespace ProtonVPN.Core.Servers.Models
         public static bool SupportsP2P(this Server server) => ServerFeatures.SupportsP2P(server.Features);
         public static bool SupportsStreaming(this Server server) => ServerFeatures.SupportsStreaming(server.Features);
         public static bool SupportsIpV6(this Server server) => ServerFeatures.SupportsIpV6(server.Features);
+        public static bool IsPartner(this Server server) => ServerFeatures.IsPartner(server.Features);
 
         public static bool Online(this Server server) => server.Status == 1;
 

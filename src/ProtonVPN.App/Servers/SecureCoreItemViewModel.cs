@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2022 Proton Technologies AG
+ * Copyright (c) 2023 Proton AG
  *
  * This file is part of ProtonVPN.
  *
@@ -17,13 +17,15 @@
  * along with ProtonVPN.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+using System.Collections.Generic;
 using ProtonVPN.Core.Servers.Models;
+using ProtonVPN.Partners;
 
 namespace ProtonVPN.Servers
 {
     internal class SecureCoreItemViewModel : ServerItemViewModel
     {
-        public SecureCoreItemViewModel(Server server, sbyte userTier) : base(server, userTier)
+        public SecureCoreItemViewModel(Server server, sbyte userTier) : base(server, new List<PartnerType>(), userTier)
         {
         }
     }

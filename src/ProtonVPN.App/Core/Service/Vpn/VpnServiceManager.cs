@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2022 Proton Technologies AG
+ * Copyright (c) 2023 Proton AG
  *
  * This file is part of ProtonVPN.
  *
@@ -96,6 +96,19 @@ namespace ProtonVPN.Core.Service.Vpn
 
         public void RegisterPortForwardingStateCallback(Action<PortForwardingState> callback)
             => _vpnService.PortForwardingStateChanged += (s, e) => callback(Map(e));
+
+        public void RegisterConnectionDetailsChangeCallback(Action<ConnectionDetails> callback)
+            => _vpnService.ConnectionDetailsChanged += (s, e) => callback(Map(e));
+
+        private static ConnectionDetails Map(ConnectionDetailsContract contract)
+        {
+            return new ConnectionDetails
+            {
+                ClientIpAddress = contract.ClientIpAddress,
+                ClientCountryIsoCode = contract.ClientCountryIsoCode,
+                ServerIpAddress = contract.ServerIpAddress,
+            };
+        }
 
         private static PortForwardingState Map(PortForwardingStateContract contract)
         {

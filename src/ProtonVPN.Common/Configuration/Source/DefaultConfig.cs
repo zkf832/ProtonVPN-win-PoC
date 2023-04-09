@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Proton Technologies AG
+ * Copyright (c) 2023 Proton AG
  *
  * This file is part of ProtonVPN.
  *
@@ -81,6 +81,8 @@ namespace ProtonVPN.Common.Configuration.Source
 
                 StreamingServicesFilePath = Path.Combine(localAppDataFolder, "StreamingServices.json"),
 
+                PartnersFilePath = Path.Combine(localAppDataFolder, "Partners.json"),
+
                 ServiceLogFolder = serviceLogFolder,
 
                 ServiceLogDefaultFullFilePath = Path.Combine(serviceLogFolder, "service-logs.txt"),
@@ -131,6 +133,8 @@ namespace ProtonVPN.Common.Configuration.Source
 
                 StreamingServicesUpdateInterval = TimeSpan.FromHours(3),
 
+                PartnersUpdateInterval = TimeSpan.FromHours(3),
+
                 AnnouncementUpdateInterval = TimeSpan.FromMinutes(150),
 
                 ServerLoadUpdateInterval = TimeSpan.FromMinutes(15),
@@ -174,7 +178,8 @@ namespace ProtonVPN.Common.Configuration.Source
                     BfeArticleUrl = "https://protonvpn.com/support/how-to-enable-the-base-filtering-engine",
                     PasswordResetUrl = "https://account.protonvpn.com/reset-password",
                     ForgetUsernameUrl = "https://account.protonvpn.com/forgot-username",
-                    UpdateUrl = "https://protonvpn.com/download/win-update.json",
+                    OldUpdateUrl = "https://protonvpn.com/download/win-update.json",
+                    UpdateUrl = "https://protonvpn.com/download/windows-releases.json",
                     DownloadUrl = "https://protonvpn.com/download",
                     ApiUrl = "https://api.protonvpn.ch",
                     TlsReportUrl = "https://reports.protonmail.ch/reports/tls",

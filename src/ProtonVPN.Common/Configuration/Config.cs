@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2022 Proton Technologies AG
+ * Copyright (c) 2023 Proton AG
  *
  * This file is part of ProtonVPN.
  *
@@ -71,6 +71,9 @@ namespace ProtonVPN.Common.Configuration
 
         [Required]
         public string StreamingServicesFilePath { get; set; }
+
+        [Required]
+        public string PartnersFilePath { get; set; }
 
         [Required]
         public string ServiceLogFolder { get; set; }
@@ -146,6 +149,9 @@ namespace ProtonVPN.Common.Configuration
 
         [Range(typeof(TimeSpan), "00:00:10", "23:59:59")]
         public TimeSpan StreamingServicesUpdateInterval { get; set; }
+
+        [Range(typeof(TimeSpan), "00:00:10", "23:59:59")]
+        public TimeSpan PartnersUpdateInterval { get; set; }
 
         [Range(typeof(TimeSpan), "00:00:10", "23:59:59")]
         public TimeSpan AnnouncementUpdateInterval { get; set; }

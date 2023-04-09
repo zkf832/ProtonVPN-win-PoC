@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2022 Proton Technologies AG
+ * Copyright (c) 2023 Proton AG
  *
  * This file is part of ProtonVPN.
  *
@@ -19,7 +19,7 @@
 
 namespace ProtonVPN.Vpn.LocalAgent
 {
-    internal enum LocalAgentState
+    public enum LocalAgentState
     {
         Connecting,
         Connected,

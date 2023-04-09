@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2022 Proton Technologies AG
+ * Copyright (c) 2023 Proton AG
  *
  * This file is part of ProtonVPN.
  *
@@ -17,9 +17,12 @@
  * along with ProtonVPN.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-namespace ProtonVPN.ConnectionInfo
+namespace ProtonVPN.Vpn.LocalAgent.Contracts
 {
-    public class AutoAssignedIp
+    public class ConnectionDetailsContract
     {
+        public string DeviceIp { get; set;  }
+        public string DeviceCountry { get; set; }
+        public string ServerIpv4 { get; set; }
     }
 }

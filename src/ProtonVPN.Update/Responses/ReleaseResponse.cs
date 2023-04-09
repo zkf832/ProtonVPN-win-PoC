@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2022 Proton Technologies AG
+ * Copyright (c) 2023 Proton AG
  *
  * This file is part of ProtonVPN.
  *
@@ -17,10 +17,24 @@
  * along with ProtonVPN.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-namespace ProtonVPN.ConnectionInfo
+using System;
+using System.Collections.Generic;
+
+namespace ProtonVPN.Update.Responses
 {
-    public class Ip
+    public class ReleaseResponse
     {
-        public string Address { get; set; }
+        public string Version;
+
+        public FileResponse File;
+
+        public IReadOnlyList<string> ChangeLog;
+
+        [Obsolete("To be deleted on 3.0.0")]
+        public bool DisableAutoUpdate;
+
+        public DateTimeOffset? ReleaseDate;
+
+        public string MinimumOsVersion;
     }
 }

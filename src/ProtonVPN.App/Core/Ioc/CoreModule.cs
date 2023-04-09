@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2022 Proton Technologies AG
+ * Copyright (c) 2023 Proton AG
  *
  * This file is part of ProtonVPN.
  *
@@ -92,14 +92,7 @@ namespace ProtonVPN.Core.Ioc
             builder.RegisterType<SafeServiceAction>().As<ISafeServiceAction>().SingleInstance();
             builder.RegisterType<UpdateService>().AsSelf().AsImplementedInterfaces().SingleInstance();
             builder.RegisterType<UserValidator>().SingleInstance();
-
-            builder.Register(c => new UserAuth(
-                c.Resolve<IApiClient>(),
-                c.Resolve<ILogger>(),
-                c.Resolve<IUserStorage>(),
-                c.Resolve<IAppSettings>(),
-                c.Resolve<IAuthCertificateManager>())).SingleInstance();
-
+            builder.RegisterType<UserAuthenticator>().AsImplementedInterfaces().SingleInstance();
             builder.RegisterType<NetworkClient>().AsImplementedInterfaces().SingleInstance();
             builder.RegisterType<DnsClients>().As<IDnsClients>().SingleInstance();
             builder.Register(c =>

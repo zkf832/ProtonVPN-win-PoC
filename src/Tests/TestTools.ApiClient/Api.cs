@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2022 Proton Technologies AG
+ * Copyright (c) 2023 Proton AG
  *
  * This file is part of ProtonVPN.
  *
@@ -36,7 +36,7 @@ namespace TestTools.ApiClient
     {
         private readonly string _username;
         private readonly string _password;
-        private readonly UserAuth _auth;
+        private readonly UserAuthenticator _userAuthenticator;
         private readonly Client _api;
 
         public Api(string username, string password)
@@ -57,12 +57,12 @@ namespace TestTools.ApiClient
                 BaseAddress = new Uri("https://api.protonvpn.ch")
             }, appSettings, appLanguageCache);
 
-            _auth = new UserAuth(_api, null, userStorage, appSettings, authCertificateManager);
+            _userAuthenticator = new UserAuthenticator(_api, null, userStorage, appSettings, authCertificateManager);
         }
 
         public async Task<bool> Login()
         {
-            return (await _auth.AuthAsync(_username, ToSecureString(_password))).Success;
+            return (await _userAuthenticator.AuthAsync(_username, ToSecureString(_password))).Success;
         }
 
         public async Task<string> GetCountry()

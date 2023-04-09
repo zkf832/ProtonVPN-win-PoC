@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2022 Proton Technologies AG
+ * Copyright (c) 2023 Proton AG
  *
  * This file is part of ProtonVPN.
  *
@@ -62,6 +62,12 @@ namespace ProtonVPN.Core.Service.Vpn
         {
             add => _vpnEvents.PortForwardingStateChanged += value;
             remove => _vpnEvents.PortForwardingStateChanged -= value;
+        }
+
+        public event EventHandler<ConnectionDetailsContract> ConnectionDetailsChanged
+        {
+            add => _vpnEvents.ConnectionDetailsChanged += value;
+            remove => _vpnEvents.ConnectionDetailsChanged -= value;
         }
 
         public Task Connect(VpnConnectionRequestContract vpnConnectionRequest) =>

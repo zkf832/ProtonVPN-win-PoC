@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2022 Proton Technologies AG
+ * Copyright (c) 2023 Proton AG
  *
  * This file is part of ProtonVPN.
  *
@@ -39,6 +39,12 @@ namespace ProtonVPN.Service.Vpn
         public event EventHandler<EventArgs<VpnState>> BeforeStateChanged;
         public event EventHandler<EventArgs<VpnState>> StateChanged;
         public event EventHandler<EventArgs<VpnState>> AfterStateChanged;
+
+        public event EventHandler<ConnectionDetails> ConnectionDetailsChanged
+        {
+            add => _origin.ConnectionDetailsChanged += value;
+            remove => _origin.ConnectionDetailsChanged -= value;
+        }
 
         public InOutBytes Total => _origin.Total;
 

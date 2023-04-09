@@ -2138,7 +2138,7 @@ Mohon ikuti &lt;Hyperlink Command="{Binding OpenArticleCommand}"&gt;&lt;Run Text
     <comment>The message displayed in the Update notification when new app version is ready to install</comment>
   </data>
   <data name="Notifications_VpnState_msg_Connected">
-    <value>TERHUBUNG ke {0}{1}IP publik baru: {2}</value>
+    <value>TERHUBUNG ke {0}</value>
     <comment>The message displayed in VPN state system notification when app connects to VPN. The {0} is a placeholder for server name, {1} - move to new line, {2} - public IP address.</comment>
   </data>
   <data name="Notifications_VpnState_msg_Disconnected">
@@ -2189,7 +2189,7 @@ Mohon ikuti &lt;Hyperlink Command="{Binding OpenArticleCommand}"&gt;&lt;Run Text
     <value>Port Forwarding</value>
   </data>
   <data name="PortForwarding_lbl_ActivePort">
-    <value>Port yang aktif:</value>
+    <value>Port aktif:</value>
   </data>
   <data name="PortForwarding_lbl_CopyValue">
     <value>Klik untuk menyalin nomor port ini.</value>
@@ -2667,7 +2667,7 @@ Mohon ikuti &lt;Hyperlink Command="{Binding OpenArticleCommand}"&gt;&lt;Run Text
     <value>Port Forwarding</value>
   </data>
   <data name="Settings_Advanced_lbl_PortForwardingInQuickSettings">
-    <value>Tombol shortcut Port Forwarding</value>
+    <value>Pintasan Port Forwarding</value>
   </data>
   <data name="Settings_Advanced_lbl_PortForwardingInQuickSettings_Info">
     <value>Akses pengaturan Port Forwarding dari menu Quick Settings</value>
@@ -3202,5 +3202,8 @@ This setting instructs the Proton VPN to start automatically when the user logs 
   <data name="WireGuard_lbl">
     <value>WireGuard</value>
     <comment>WireGuard client name (do not translate)</comment>
+  </data>
+  <data name="Connecting_lbl_ConnectingTo_2">
+    <value></value>
   </data>
 </root>

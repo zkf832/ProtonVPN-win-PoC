@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2022 Proton Technologies AG
+ * Copyright (c) 2023 Proton AG
  *
  * This file is part of ProtonVPN.
  *
@@ -19,12 +19,16 @@
 
 using System.Collections.Generic;
 
-namespace ProtonVPN.Update.Contracts
+namespace ProtonVPN.Partners
 {
-    public class CategoryContract
+    public class PartnerType
     {
-        public string Name;
+        public string Type { get; set; }
 
-        public IReadOnlyList<ReleaseContract> Releases;
+        public string Description { get; set; }
+
+        public string IconUrl { get; set; }
+
+        public List<Partner> Partners { get; set; }
     }
 }

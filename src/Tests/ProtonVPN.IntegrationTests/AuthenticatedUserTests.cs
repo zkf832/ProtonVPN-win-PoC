@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2022 Proton Technologies AG
+ * Copyright (c) 2023 Proton AG
  *
  * This file is part of ProtonVPN.
  *
@@ -113,7 +113,7 @@ namespace ProtonVPN.IntegrationTests
         {
             SrpPInvoke.SetUnitTest();
             SecureString securePassword = new NetworkCredential("", password).SecurePassword;
-            return await Resolve<UserAuth>().LoginUserAsync("username", securePassword);
+            return await Resolve<IUserAuthenticator>().LoginUserAsync("username", securePassword);
         }
     }
 }

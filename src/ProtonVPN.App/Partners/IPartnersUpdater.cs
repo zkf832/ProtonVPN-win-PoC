@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2022 Proton Technologies AG
+ * Copyright (c) 2023 Proton AG
  *
  * This file is part of ProtonVPN.
  *
@@ -17,18 +17,17 @@
  * along with ProtonVPN.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using ProtonVPN.Api.Contracts.Partners;
 
-namespace ProtonVPN.Update.Contracts
+namespace ProtonVPN.Partners
 {
-    public class ReleaseContract
+    public interface IPartnersUpdater
     {
-        public string Version;
+        event EventHandler<List<PartnerTypeResponse>> PartnersUpdated;
 
-        public FileContract File;
-
-        public IReadOnlyList<string> ChangeLog;
-
-        public bool DisableAutoUpdate;
+        Task Update();
     }
 }

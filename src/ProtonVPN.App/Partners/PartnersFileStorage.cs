@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2022 Proton Technologies AG
+ * Copyright (c) 2023 Proton AG
  *
  * This file is part of ProtonVPN.
  *
@@ -18,11 +18,20 @@
  */
 
 using System.Collections.Generic;
+using ProtonVPN.Api.Contracts.Partners;
+using ProtonVPN.Common.Configuration;
+using ProtonVPN.Common.FileStoraging;
+using ProtonVPN.Common.Logging;
+using ProtonVPN.Common.Text.Serialization;
 
-namespace ProtonVPN.Servers
+namespace ProtonVPN.Partners
 {
-    public interface ISortedCountries
+    public class PartnersFileStorage : FileStorageBase<List<PartnerTypeResponse>>, IPartnersFileStorage
     {
-        List<string> List(sbyte tier);
+        public PartnersFileStorage(ILogger logger,
+            ITextSerializerFactory serializerFactory, IConfiguration config)
+            : base(logger, serializerFactory, config.PartnersFilePath)
+        {
+        }
     }
 }

@@ -2174,7 +2174,7 @@ Postępuj zgodnie z &lt;Hyperlink Command="{Binding OpenArticleCommand}"&gt;&lt;
     <comment>The message displayed in the Update notification when new app version is ready to install</comment>
   </data>
   <data name="Notifications_VpnState_msg_Connected">
-    <value>Połączono z {0}{1}Nowy publiczny adres IP: {2}</value>
+    <value>POŁĄCZONO z {0}</value>
     <comment>The message displayed in VPN state system notification when app connects to VPN. The {0} is a placeholder for server name, {1} - move to new line, {2} - public IP address.</comment>
   </data>
   <data name="Notifications_VpnState_msg_Disconnected">
@@ -2641,7 +2641,7 @@ Postępuj zgodnie z &lt;Hyperlink Command="{Binding OpenArticleCommand}"&gt;&lt;
     <comment>The label of Split Tunnel mode in Split Tunneling section of Advanced tab of Settings window</comment>
   </data>
   <data name="Settings_Advanced_SplitTunnel_lbl_Include">
-    <value>Tylko wybrane aplikacje/adresy IP skorzystają z tunelu VPN</value>
+    <value>Tylko wybrane aplikacje / adresy IP skorzystają z tunelu VPN</value>
     <comment>The label of Split Tunnel mode in Split Tunneling section of Advanced tab of Settings window</comment>
   </data>
   <data name="Settings_Advanced_SplitTunnel_lbl_Ip">
@@ -2692,7 +2692,7 @@ Postępuj zgodnie z &lt;Hyperlink Command="{Binding OpenArticleCommand}"&gt;&lt;
     <value>Sterownik sieciowy OpenVPN</value>
   </data>
   <data name="Settings_Advanced_lbl_NetworkDriver_info">
-    <value>Sterownik sieciowy może mieć wpływ na połączenie i jego prędkość. Nowy adapter TUN zapewnia wyższą prędkość. W przypadku problemów z połączeniem, wróć do adaptera TAP.</value>
+    <value>Sterownik sieciowy może mieć wpływ na połączenie i jego prędkość. Nowy adapter TUN zapewnia wyższą prędkość. W przypadku problemów z połączeniem wróć do adaptera TAP.</value>
   </data>
   <data name="Settings_Advanced_lbl_NonStandardPorts">
     <value>Niestandardowe porty</value>
@@ -3274,5 +3274,8 @@ This setting instructs the Proton VPN to start automatically when the user logs 
   <data name="WireGuard_lbl">
     <value>WireGuard</value>
     <comment>WireGuard client name (do not translate)</comment>
+  </data>
+  <data name="Connecting_lbl_ConnectingTo_2">
+    <value></value>
   </data>
 </root>
